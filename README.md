@@ -1,6 +1,17 @@
-# 🧪 ICAR-IIRR Laboratory Management Portal
+<div align="center">
+  <h1>🧪 ICAR-IIRR Laboratory Management Portal</h1>
+  <p><i>A complete, modern web suite for managing laboratory resources.</i></p>
 
-Welcome! This is a complete, modern web portal built for managing laboratory resources (People, Projects, Publications, and Inventory). It is designed to be extremely secure, fast, and easy to use.
+  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+  ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+  ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+  ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+</div>
+
+<br/>
+
+Welcome! This is a robust, highly secure, and modern web application built specifically for the ICAR-Indian Institute of Rice Research to manage People, Projects, Publications, and Inventory.
 
 This guide will walk you through exactly how to open and run this project using **Visual Studio Code (VS Code)**.
 
