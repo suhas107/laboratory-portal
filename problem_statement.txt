@@ -1,0 +1,77 @@
+Project Title: Development  of Laboratory management web portal  
+Problem Statement:   
+ICAR -IIRR is a premiere rice research Institute funded by Govt. of India.  It houses state of 
+the art research laboratories each focusing on a specific research program. Each laboratory is 
+headed by a Principal Investigator/Lab Administrator. The Lab admin manages all resources 
+including people, project, publications, and invento ry of the laboratory for smooth execution 
+of research experiments to achieve the objectives. Therefore, a complete suite (web portal) with   
+a dashboard for real time monitoring of status of all resources is essential for the Lab Admin 
+for the efficient deployment resources to increase the productivity  of the lab.  
+Pain Points:  Currently, the information about all these resources  is scatte red in different hard 
+copies of files, soft copies of documents stored in different folders/computers making it tedious 
+and time consuming for the lab Admin  to manage them and for checking the status in real time.  
+Solution:  Development of a complete suite (web portal) with a dashboard for real time 
+monitoring of status of all resources   
+Approach:  Designing a Laboratory management web portal  with an integrated dashboard 
+requires a centralized approach to track, and deploy laboratory sources like people, projects, 
+and inventory etc. The system should provide high -value, actionable insights to reduce 
+duplication of tasks,  planning  timely purchase of inventory, recruitment of people, etc.  It 
+should ideally have following features : 
+1. The Dashboard  (Command Center):  The dashboard should provide a high -level 
+overview and real -time status of laboratory resources . 
+ 
+2. A Centralized Repository  of all resources : 
+ People : It includ es all categories like Lab Admin, Scientist, Technician, Post Doc, 
+RA, SRF, JRF, Project Assistant, PhD student, MSc Student  along with date of 
+joining and data of relieving,  etc. 
+ Projects:  Project Name, Project Code, Type of Project, Funding Source, Date of 
+Start, Date of Closing, Report Status.  
+ Publications:  Publication title, Project, Year, Journal, NAAS Score  
+ Inventory: Permanent Equipment, Semi -Permanent, Chemicals, Glassware, Plastic 
+ware, Miscellaneous items with following details for each item:  Date of purchase , 
+Make, Model, Cat No, Qty, Price, Total Quantity in Stock.  
+ 
+3. Analytics & Reporting:  Ability to generate Custom Reports  by Resource classes  
+ 
+4. Technical Requirements & User Experience  
+ Security & Compliance:  High -security encryption  and Access control  (e.g., 
+HTTPS, 2FA) to protect sensitive IP data.  
+ Integration:  Integration with Microsoft Office (Word/ Excel/ Outlook) for filing and 
+document creation.  
+5. Implementation Steps  
+ On boarding :  
+---
+  Creation of database files, data entry offline/online through portal’s user 
+interface with role based login credentials .  
+ 
+  Inventorying all lab resources , and en tering in to digital databases  
+ 
+ System Configuration:   
+ 
+ Setting up customized dashboards, workflows, and automated reminders.  
+ 
+This structure  should ensure  that the Lab management platform is not just a repository, but a 
+strategic tool to protect and maximize the value of IP assets.  
+Data Base Structure : 
+ 
+Database -1: People  
+Fields: Lab Admin, Scientist, Technician, Post Doc, RA, SRF, JRF, Project 
+Assistant, PhD student, MSc Student  along with date of joining and data of 
+relieving,  
+ 
+  Database -2 – Projects  
+Fields: Project Name, Project Code, Type of Project, Funding Source, Date of S tart, 
+Date of Closing, Report Status.  
+ 
+Data Base -3 – Publications  
+Fields: Project, Year, Journal, NAAS Score  
+ 
+Data Base -4 – Inventory   
+Fields: Inventory Class (drop down: Permanent Equipment, Semi -Permanent, 
+Chemicals, Glassware, Plastic ware, Miscellaneous items ), Date of purchase , 
+Make, Model, Cat No, Qty, Price, Total Quantity in Stock.  
+ 
+ 
+ 
+ 
+---
