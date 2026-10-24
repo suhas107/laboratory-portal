@@ -1,90 +1,102 @@
 <div align="center">
-  <h1>🧪 ICAR-IIRR Laboratory Management Portal</h1>
-  <p><i>A complete, modern web suite for managing laboratory resources.</i></p>
 
-  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-  ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-  ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
-  ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
-  ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+# 🧪 ICAR-IIRR Laboratory Management Portal
+
+**A full-stack portal for managing a research lab's people, projects, publications and inventory, with dashboards, reports and automated alerts.**
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+
 </div>
 
-<br/>
-
-Welcome! This is a robust, highly secure, and modern web application built specifically for the ICAR-Indian Institute of Rice Research to manage People, Projects, Publications, and Inventory.
-
-This guide will walk you through exactly how to open and run this project using **Visual Studio Code (VS Code)**.
-
 ---
 
-## 🛠️ Step 1: What You Need First
+## ✨ Features
 
-Before you begin, make sure you have installed:
-1. **VS Code**: If you don't have it, download it from [code.visualstudio.com](https://code.visualstudio.com/).
-2. **Node.js**: You need version 18 or higher. Download it from [nodejs.org](https://nodejs.org/). (When installing, just click "Next" through all the default options).
+| Area | What it does |
+| --- | --- |
+| 🔐 **Authentication** | JWT login with bcrypt-hashed passwords and **TOTP two-factor auth** (QR setup for Google / Microsoft Authenticator), enforced on first login |
+| 👥 **Roles & approvals** | `admin` and `viewer` roles; new sign-ups wait for admin approval in **User Management** |
+| 📋 **Four modules** | Full CRUD for **People**, **Projects**, **Publications** and **Inventory** with searchable data tables |
+| 📊 **Dashboard** | Summary stat cards and Chart.js charts across all modules |
+| 📑 **Reports** | Export any module to **Excel (.xlsx)** or **Word (.docx)** |
+| ⏰ **Automated alerts** | Daily 8 AM job emails the admin about projects closing within 30 days and inventory items with fewer than 10 in stock |
+| 🌗 **Theming** | Light and dark mode |
 
----
+## 🛠️ Tech stack
 
-## 📂 Step 2: Open the Project in VS Code
+| Layer | Tools |
+| --- | --- |
+| Frontend | React 19, Vite, React Router, Chart.js, Axios, react-hot-toast |
+| Backend | Node.js, Express, better-sqlite3, JWT, bcryptjs, otplib / speakeasy, node-cron, Nodemailer |
+| Exports | ExcelJS, docx |
 
-1. Open **VS Code**.
-2. Click on **File** > **Open Folder...** (or Open Directory).
-3. Select this folder (the one containing this `README.md` file).
+## 🚀 Getting started
 
----
+Requires **Node.js 18+**.
 
-## ⚙️ Step 3: Configure Your Settings (Important!)
+**1. Clone**
 
-Before starting the server, you need to set up the Email Configuration so the portal can send out 2FA codes, approvals, and automated alerts.
+```bash
+git clone https://github.com/suhas107/laboratory-portal.git
+cd laboratory-portal
+```
 
-1. In VS Code, look at the file explorer on the left side.
-2. Open the **`server`** folder, and click on the file named **`.env`**.
-3. In that file, you will see a section for Email Configuration. Fill in your official ICAR Outlook email and password where instructed.
-4. You can also change your starting Admin Username and Password in this file!
-5. **Save the file** (`Ctrl + S` or `Cmd + S`).
+**2. Start the backend**
 
----
+```bash
+cd server
+cp .env.example .env      # Windows: copy .env.example .env
+npm install
+npm run dev               # http://localhost:5000
+```
 
-## 🚀 Step 4: Start the Application
+**3. Start the frontend** (in a second terminal)
 
-The application has two pieces that need to run at the same time: the **Backend (Server)** and the **Frontend (Client)**. 
+```bash
+cd client
+npm install
+npm run dev               # http://localhost:5173
+```
 
-### Part A: Start the Backend
-1. In VS Code, go to the top menu and click **Terminal** > **New Terminal**.
-2. A terminal panel will open at the bottom. Type the following commands, pressing **Enter** after each one:
-   ```bash
-   cd server
-   npm install
-   npm run dev
-   ```
-3. *Wait a moment. You will see a green message saying "Server running on http://localhost:5000". Leave this terminal open!*
+**4. Log in** at http://localhost:5173 with the admin credentials from `.env` (default `admin` / `admin123`). On first login you'll be asked to scan a QR code to set up 2FA.
 
-### Part B: Start the Frontend
-1. Open a **second** terminal by clicking the **`+`** icon in the terminal panel at the bottom right.
-2. In this new terminal window, type:
-   ```bash
-   cd client
-   npm install
-   npm run dev
-   ```
-3. *You will see a message saying "VITE ready".*
+### Environment variables (`server/.env`)
 
----
+| Variable | Purpose |
+| --- | --- |
+| `PORT` | API port (default `5000`) |
+| `JWT_SECRET` | Secret for signing login tokens |
+| `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `ADMIN_FULL_NAME`, `ADMIN_EMAIL` | First admin account, created on startup |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS` | Mail server for 2FA, approval and alert emails. If left blank, a free [Ethereal](https://ethereal.email) test inbox is used |
 
-## 🎉 Step 5: You're Live!
+## 📁 Project structure
 
-1. Open your web browser (Chrome, Edge, Firefox, etc.).
-2. Go to this address: **http://localhost:5173**
-3. Log in using the default credentials you set in the `.env` file (by default: `admin` and `admin123`).
+```
+laboratory-portal/
+├── client/                 # React + Vite frontend
+│   └── src/
+│       ├── components/     # Navbar, Sidebar, DataTable, Modal, StatCard
+│       ├── context/        # Auth and theme providers
+│       ├── pages/          # Dashboard, People, Projects, Publications, Inventory, Reports, Users
+│       └── services/api.js
+└── server/                 # Express API
+    ├── db/schema.sql       # SQLite schema
+    ├── middleware/auth.js  # JWT + admin guard
+    ├── routes/             # auth, dashboard, people, projects, publications, inventory, reports
+    └── services/           # email + daily cron alerts
+```
 
-> **🚨 CRITICAL FIRST LOGIN STEP:**
-> The very first time you log in, you will be forced to scan a QR code to set up **Two-Factor Authentication (2FA)** on your phone. You can use Google Authenticator, Microsoft Authenticator, or Apple Passwords. Do not lose this connection on your phone!
+## 🧯 Troubleshooting
 
----
+- **"Module not found"**: run `npm install` in both `server` and `client`.
+- **Can't log in**: check that `server/.env` exists and the backend terminal shows no errors.
 
-## 💡 Troubleshooting
+## 📄 License
 
-- **"Module not found" error?** Make sure you ran `npm install` inside both the `server` and `client` folders.
-- **Can't log in?** Ensure your `.env` file is saved properly and the backend server terminal isn't showing any red errors.
-
-Enjoy your new Laboratory Management Portal!
+[MIT](LICENSE)

@@ -87,3 +87,5 @@ Thumbs.db
 client/dist
 server/db/laboratory.db
 scratch/
+server/db/laboratory.db-shm
+server/db/laboratory.db-wal
