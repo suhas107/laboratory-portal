@@ -16,6 +16,16 @@
 
 ---
 
+## 📸 Screenshots
+
+![Dashboard with stat cards and charts](docs/screenshots/dashboard.png)
+
+| Projects | Inventory |
+| --- | --- |
+| ![Projects table](docs/screenshots/projects.png) | ![Inventory table](docs/screenshots/inventory.png) |
+
+<p align="center"><img src="docs/screenshots/login.png" alt="Login page" width="640" /></p>
+
 ## ✨ Features
 
 | Area | What it does |
@@ -38,7 +48,7 @@
 
 ## 🚀 Getting started
 
-Requires **Node.js 18+**.
+Requires **Node.js 20+**.
 
 **1. Clone**
 
